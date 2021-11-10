@@ -8,30 +8,7 @@ use HtmlToProseMirror\Test\TestCase;
 class CodeBlockTest extends TestCase
 {
     /** @test */
-    public function code_block_gets_rendered_correctly()
-    {
-        $html = '<pre><code>Example Text</code></pre>';
-
-        $json = [
-            'type' => 'doc',
-            'content' => [
-                [
-                    'type' => 'code_block',
-                    'content' => [
-                        [
-                            'type' => 'text',
-                            'text' => 'Example Text',
-                        ],
-                    ],
-                ],
-            ],
-        ];
-
-        $this->assertEquals($json, (new Renderer)->render($html));
-    }
-
-    /** @test */
-    public function code_block_gets_rendered_correctly_with_lower_camel_casing()
+    public function codeBlock_gets_rendered_correctly()
     {
         $html = '<pre><code>Example Text</code></pre>';
 
@@ -50,11 +27,11 @@ class CodeBlockTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->withLowerCamelCasedSyntax()->render($html));
+        $this->assertEquals($json, (new Renderer)->render($html));
     }
 
     /** @test */
-    public function code_block_with_language_gets_rendered_correctly()
+    public function codeBlock_with_language_gets_rendered_correctly()
     {
         $html = '<pre><code class="language-css">body { display: none }</code></pre>';
 
@@ -62,7 +39,7 @@ class CodeBlockTest extends TestCase
             'type' => 'doc',
             'content' => [
                 [
-                    'type' => 'code_block',
+                    'type' => 'codeBlock',
                     'attrs' => [
                         'language' => 'css',
                     ],

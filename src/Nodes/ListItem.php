@@ -21,7 +21,7 @@ class ListItem extends Node
         }
 
         return [
-            'type' => $this->lowerCamelCasedSyntax ? 'listItem' : 'list_item',
+            'type' => 'listItem',
         ];
     }
 }

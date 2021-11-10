@@ -18,18 +18,17 @@ class CodeBlock extends Node
 
     public function data()
     {
-        $type = $this->lowerCamelCasedSyntax ? 'codeBlock' : 'code_block';
         if ($language = $this->getLanguage()) {
             return [
-                'type' => $type,
+                'type' => 'codeBlock',
                 'attrs' => [
-                    'language' => $this->getLanguage(),
+                    'language' => $language,
                 ],
             ];
         }
 
         return [
-            'type' => $type,
+            'type' => 'codeBlock',
         ];
     }
 }

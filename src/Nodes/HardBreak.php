@@ -12,7 +12,7 @@ class HardBreak extends Node
     public function data()
     {
         return [
-            'type' => $this->lowerCamelCasedSyntax ? 'hardBreak' : 'hard_break',
+            'type' => 'hardBreak',
         ];
     }
 }

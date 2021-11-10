@@ -8,54 +8,7 @@ use HtmlToProseMirror\Test\TestCase;
 class BulletListTest extends TestCase
 {
     /** @test */
-    public function bullet_list_gets_rendered_correctly()
-    {
-        $html = '<ul><li><p>Example</p></li><li><p>Text</p></li></ul>';
-
-        $json = [
-            'type' => 'doc',
-            'content' => [
-                [
-                    'type' => 'bullet_list',
-                    'content' => [
-                        [
-                            'type' => 'list_item',
-                            'content' => [
-                                [
-                                    'type' => 'paragraph',
-                                    'content' => [
-                                        [
-                                            'type' => 'text',
-                                            'text' => 'Example',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                        [
-                            'type' => 'list_item',
-                            'content' => [
-                                [
-                                    'type' => 'paragraph',
-                                    'content' => [
-                                        [
-                                            'type' => 'text',
-                                            'text' => 'Text',
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ];
-
-        $this->assertEquals($json, (new Renderer(true))->render($html));
-    }
-
-    /** @test */
-    public function bullet_list_gets_rendered_correctly_with_lower_camel_casing()
+    public function bulletList_gets_rendered_correctly()
     {
         $html = '<ul><li><p>Example</p></li><li><p>Text</p></li></ul>';
 
@@ -98,11 +51,11 @@ class BulletListTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer(true))->withLowerCamelCasedSyntax()->render($html));
+        $this->assertEquals($json, (new Renderer(true))->render($html));
     }
 
     /** @test */
-    public function bullet_list_item_with_text_only_gets_wrapped_in_paragraph()
+    public function bulletList_item_with_text_only_gets_wrapped_in_paragraph()
     {
         $html = '<ul><li>Example</li><li>Text <em>Test</em></li></ul>';
 
@@ -110,10 +63,10 @@ class BulletListTest extends TestCase
             'type' => 'doc',
             'content' => [
                 [
-                    'type' => 'bullet_list',
+                    'type' => 'bulletList',
                     'content' => [
                         [
-                            'type' => 'list_item',
+                            'type' => 'listItem',
                             'content' => [
                                 [
                                     'type' => 'paragraph',
@@ -127,7 +80,7 @@ class BulletListTest extends TestCase
                             ],
                         ],
                         [
-                            'type' => 'list_item',
+                            'type' => 'listItem',
                             'content' => [
                                 [
                                     'type' => 'paragraph',
@@ -158,7 +111,7 @@ class BulletListTest extends TestCase
     }
 
     /** @test */
-    public function list_items_with_space_get_rendered_correctly()
+    public function listItems_with_space_get_rendered_correctly()
     {
         $html = "<ul><li> </li></ul>";
 
@@ -166,10 +119,10 @@ class BulletListTest extends TestCase
             'type' => 'doc',
             'content' => [
                 [
-                    'type' => 'bullet_list',
+                    'type' => 'bulletList',
                     'content' => [
                         [
-                            'type' => 'list_item',
+                            'type' => 'listItem',
                             'content' => [
                                 [
                                     'type' => 'paragraph',

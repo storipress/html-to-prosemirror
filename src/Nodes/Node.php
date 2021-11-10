@@ -10,12 +10,9 @@ class Node
 
     protected $DOMNode;
 
-    protected $lowerCamelCasedSyntax;
-
-    public function __construct($DOMNode, bool $lowerCamelCasedSyntax = false)
+    public function __construct($DOMNode)
     {
         $this->DOMNode = $DOMNode;
-        $this->lowerCamelCasedSyntax = $lowerCamelCasedSyntax;
     }
 
     public function matching()

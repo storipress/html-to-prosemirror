@@ -53,7 +53,7 @@ class WhitespaceTest extends TestCase
                     ],
                 ],
                 [
-                    'type' => 'code_block',
+                    'type' => 'codeBlock',
                     'content' => [
                         [
                             'type' => 'text',

@@ -5,8 +5,7 @@ namespace HtmlToProseMirror\Nodes;
 class TableCell extends Node
 {
     protected $tagName = 'td';
-    protected $nodeType = 'table_cell';
-    protected $nodeTypeLowerCamelCased = 'tableCell';
+    protected $nodeType = 'tableCell';
 
     public function matching()
     {
@@ -16,7 +15,7 @@ class TableCell extends Node
     public function data()
     {
         $data = [
-            'type' => $this->lowerCamelCasedSyntax ? $this->nodeTypeLowerCamelCased : $this->nodeType,
+            'type' => $this->nodeType,
         ];
 
         $attrs = [];

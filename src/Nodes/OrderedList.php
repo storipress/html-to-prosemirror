@@ -12,7 +12,7 @@ class OrderedList extends Node
     public function data()
     {
         return [
-            'type' => $this->lowerCamelCasedSyntax ? 'orderedList' : 'ordered_list',
+            'type' => 'orderedList',
             'attrs' => [
                 'order' =>
                     $this->DOMNode->getAttribute('start') ?
