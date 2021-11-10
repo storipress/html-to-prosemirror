@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "7.4"
+          - "8.0"
 
         dependencies:
           - "locked"
@@ -57,7 +57,7 @@ jobs:
         run: "composer update --no-interaction --no-progress --no-suggest"
 
       - name: "Run friendsofphp/php-cs-fixer"
-        run: "vendor/bin/php-cs-fixer fix --config=.php_cs --diff --diff-format=udiff --dry-run --verbose"
+        run: "vendor/bin/php-cs-fixer fix --diff --dry-run --verbose"
 
   tests:
     name: "Tests"
@@ -67,10 +67,6 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "7.1"
-          - "7.2"
-          - "7.3"
-          - "7.4"
           - "8.0"
 
         dependencies:

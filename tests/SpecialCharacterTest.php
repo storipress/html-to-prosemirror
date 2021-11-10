@@ -26,7 +26,7 @@ class SpecialCharacterTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 
     /** @test */
@@ -49,7 +49,7 @@ class SpecialCharacterTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 
     /** @test */
@@ -72,7 +72,7 @@ class SpecialCharacterTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 
     /** @test */
@@ -95,6 +95,6 @@ class SpecialCharacterTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 }

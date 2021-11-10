@@ -43,7 +43,7 @@ class MarksInNodesTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 
     /** @test */
@@ -141,7 +141,7 @@ class MarksInNodesTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 
     /** @test */
@@ -302,6 +302,6 @@ class MarksInNodesTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 }

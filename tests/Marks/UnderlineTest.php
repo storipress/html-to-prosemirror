@@ -32,6 +32,6 @@ class UnderlineTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 }

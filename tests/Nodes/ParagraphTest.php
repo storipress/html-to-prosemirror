@@ -27,7 +27,7 @@ class ParagraphTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 
 
@@ -60,6 +60,6 @@ class ParagraphTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 }

@@ -26,7 +26,7 @@ class ConfiguredNodesTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 
     /** @test */
@@ -49,7 +49,7 @@ class ConfiguredNodesTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->withNodes([
+        $this->assertEquals($json, (new Renderer())->withNodes([
             \HtmlToProseMirror\Nodes\Text::class,
             \HtmlToProseMirror\Nodes\Paragraph::class,
         ])->render($html));
@@ -65,7 +65,7 @@ class ConfiguredNodesTest extends TestCase
             'content' => [],
         ];
 
-        $this->assertEquals($json, (new Renderer)->withNodes([])->render($html));
+        $this->assertEquals($json, (new Renderer())->withNodes([])->render($html));
     }
 
     /** @test */
@@ -88,7 +88,7 @@ class ConfiguredNodesTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->replaceNode(
+        $this->assertEquals($json, (new Renderer())->replaceNode(
             \HtmlToProseMirror\Nodes\Paragraph::class,
             \HtmlToProseMirror\Test\Nodes\Custom\Paragraph::class
         )->render($html));

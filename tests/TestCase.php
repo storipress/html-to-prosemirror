@@ -9,7 +9,7 @@ class TestCase extends BaseTestCase
 {
     public function debugJson($data)
     {
-        $climate = new CLImate;
+        $climate = new CLImate();
         $climate->json($data);
         die();
     }

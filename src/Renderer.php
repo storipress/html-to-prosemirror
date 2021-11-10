@@ -133,7 +133,7 @@ class Renderer
     {
         libxml_use_internal_errors(true);
 
-        $this->document = new DOMDocument;
+        $this->document = new DOMDocument();
         $this->document->loadHTML(
             $this->wrapHtmlDocument(
                 $this->stripWhitespace($value)
@@ -150,7 +150,7 @@ class Renderer
 
     private function stripWhitespace(string $value): string
     {
-        return (new Minify)->process($value);
+        return (new Minify())->process($value);
     }
 
     private function getDocumentBody(): DOMElement

@@ -26,7 +26,7 @@ class ConfiguredMarksTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->render($html));
+        $this->assertEquals($json, (new Renderer())->render($html));
     }
 
     /** @test */
@@ -49,7 +49,7 @@ class ConfiguredMarksTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->withMarks([
+        $this->assertEquals($json, (new Renderer())->withMarks([
             \HtmlToProseMirror\Marks\Bold::class,
         ])->render($html));
     }
@@ -74,7 +74,7 @@ class ConfiguredMarksTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->withMarks([])->render($html));
+        $this->assertEquals($json, (new Renderer())->withMarks([])->render($html));
     }
 
     /** @test */
@@ -102,7 +102,7 @@ class ConfiguredMarksTest extends TestCase
             ],
         ];
 
-        $this->assertEquals($json, (new Renderer)->replaceMark(
+        $this->assertEquals($json, (new Renderer())->replaceMark(
             \HtmlToProseMirror\Marks\Bold::class,
             \HtmlToProseMirror\Test\Marks\Custom\Bold::class
         )->render($html));
