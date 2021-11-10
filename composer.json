@@ -13,7 +13,8 @@
   ],
   "require": {
     "php": "^8.0",
-    "ext-dom": "*"
+    "ext-dom": "*",
+    "ext-libxml": "*"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "~2.15",
