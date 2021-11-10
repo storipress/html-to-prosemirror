@@ -7,7 +7,7 @@ class Paragraph extends Node
     public function matching()
     {
         return $this->DOMNode->nodeName === 'p'
-            || $this->DOMNode->nodeName === 'figure';
+            || $this->DOMNode->nodeName === 'figcaption';
     }
 
     public function data()
