@@ -24,6 +24,7 @@ class Renderer
 
     protected $nodes = [
         Nodes\Blockquote::class,
+        Nodes\Bookmark::class,
         Nodes\BulletList::class,
         Nodes\CodeBlock::class,
         Nodes\CodeBlockWrapper::class,
