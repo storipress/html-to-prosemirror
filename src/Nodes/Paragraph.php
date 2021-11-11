@@ -12,6 +12,10 @@ class Paragraph extends Node
 
     public function data()
     {
+        if (empty(trim($this->DOMNode->nodeValue))) {
+            return null;
+        }
+
         return [
             'type' => 'paragraph',
         ];
