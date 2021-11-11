@@ -36,6 +36,7 @@ class Renderer
         Nodes\ListItem::class,
         Nodes\OrderedList::class,
         Nodes\Paragraph::class,
+        Nodes\Picture::class,
         Nodes\Table::class,
         Nodes\TableCell::class,
         Nodes\TableHeader::class,
