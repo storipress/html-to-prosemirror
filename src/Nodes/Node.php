@@ -2,15 +2,17 @@
 
 namespace HtmlToProseMirror\Nodes;
 
+use DOMNode;
+
 class Node
 {
     public $wrapper = null;
 
     public $type = 'node';
 
-    protected $DOMNode;
+    protected DOMNode $DOMNode;
 
-    public function __construct($DOMNode)
+    public function __construct(DOMNode $DOMNode)
     {
         $this->DOMNode = $DOMNode;
     }
