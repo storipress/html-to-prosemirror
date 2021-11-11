@@ -30,6 +30,7 @@ class Renderer
         Nodes\HardBreak::class,
         Nodes\Heading::class,
         Nodes\HorizontalRule::class,
+        Nodes\Iframe::class,
         Nodes\Image::class,
         Nodes\ListItem::class,
         Nodes\OrderedList::class,
@@ -158,10 +159,11 @@ class Renderer
         return $this->document->getElementsByTagName('body')->item(0);
     }
 
-    private function renderChildren($node): array
+    private function renderChildren(DOMElement $node): array
     {
         $nodes = [];
 
+        /** @var DOMElement $child */
         foreach ($node->childNodes as $child) {
             if ($class = $this->getMatchingNode($child)) {
                 $item = $class->data();
