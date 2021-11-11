@@ -7,22 +7,17 @@ class Picture extends Node
     public function matching()
     {
         return $this->DOMNode->nodeName === 'figure'
-            && count($this->DOMNode->getElementsByTagName('picture')) > 0
             && str_contains(
                 $this->DOMNode->getAttribute('class'),
                 'image'
-            );
+            )
+            && $this->DOMNode->getElementsByTagName('picture')->length > 0
+            && $this->DOMNode->getElementsByTagName('img')->length > 0;
     }
 
     public function data()
     {
-        $img = $this->DOMNode->getElementsByTagName('img');
-
-        if (empty($img)) {
-            return null;
-        }
-
-        $img = $img[0];
+        $img = $this->DOMNode->getElementsByTagName('img')->item(0);
 
         $figcaption = $this->DOMNode->getElementsByTagName('figcaption');
 
