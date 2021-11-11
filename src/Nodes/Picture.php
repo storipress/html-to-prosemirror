@@ -33,13 +33,7 @@ class Picture extends Node
             );
         }
 
-        if ($this->DOMNode->hasChildNodes()) {
-            foreach ($this->DOMNode->childNodes as $node) {
-                $this->DOMNode->removeChild($node);
-            }
-        }
-
-        return [
+        $data = [
             'type' => 'image',
             'attrs' => [
                 'alt' => $img->getAttribute('alt') ?: null,
@@ -47,5 +41,11 @@ class Picture extends Node
                 'title' => $figcaption ?: $img->getAttribute('title') ?: null,
             ],
         ];
+
+        while ($this->DOMNode->hasChildNodes()) {
+            $this->DOMNode->removeChild($this->DOMNode->firstChild);
+        }
+
+        return $data;
     }
 }
