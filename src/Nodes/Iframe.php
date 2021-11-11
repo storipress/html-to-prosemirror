@@ -11,11 +11,15 @@ class Iframe extends Node
 
     public function data()
     {
+        if (!$this->DOMNode->hasAttribute('src')) {
+            return null;
+        }
+
         return [
             'type' => 'resource',
             'attrs' => [
                 'type' => 'embed',
-                'url' => $this->DOMNode->hasAttribute('src') ? $this->DOMNode->getAttribute('src') : null,
+                'url' => $this->DOMNode->getAttribute('src'),
             ],
         ];
     }
