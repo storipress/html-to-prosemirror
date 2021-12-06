@@ -6,12 +6,25 @@ class Iframe extends Node
 {
     public function matching()
     {
-        return $this->DOMNode->nodeName === 'iframe';
+        return $this->DOMNode->nodeName === 'iframe'
+               || ($this->DOMNode->nodeName === 'figure' && str_contains($this->DOMNode->getAttribute('class'), 'wp-block-embed'));
     }
 
     public function data()
     {
-        if (!$this->DOMNode->hasAttribute('src')) {
+        $url = null;
+
+        if ($this->DOMNode->nodeName === 'iframe') {
+            $url = $this->DOMNode->getAttribute('src');
+        } else if ($this->DOMNode->nodeName === 'figure') {
+            $url = trim($this->DOMNode->textContent);
+
+            while ($this->DOMNode->hasChildNodes()) {
+                $this->DOMNode->removeChild($this->DOMNode->firstChild);
+            }
+        }
+
+        if (empty($url)) {
             return null;
         }
 
@@ -19,7 +32,7 @@ class Iframe extends Node
             'type' => 'resource',
             'attrs' => [
                 'type' => 'embed',
-                'url' => $this->DOMNode->getAttribute('src'),
+                'url' => $url,
             ],
         ];
     }
