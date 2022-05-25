@@ -32,6 +32,7 @@ class Renderer
         Nodes\Heading::class,
         Nodes\HorizontalRule::class,
         Nodes\Iframe::class,
+        Nodes\Ignore::class,
         Nodes\Image::class,
         Nodes\ListItem::class,
         Nodes\OrderedList::class,
