@@ -11,15 +11,33 @@ class Text extends Node
 
     public function data()
     {
-        $text = ltrim($this->DOMNode->nodeValue, "\n");
+        $text = trim($this->DOMNode->nodeValue);
 
         if ($text === '') {
             return null;
         }
 
-        return [
+        $passes = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+
+        $node = $this->DOMNode->parentNode;
+
+        while (
+            !in_array($node->nodeName, $passes, true) &&
+            $node = $node->parentNode
+        );
+
+        $text = [
             'type' => 'text',
             'text' => $text,
+        ];
+
+        if ($node) {
+            return $text;
+        }
+
+        return [
+            'type'    => 'paragraph',
+            'content' => [$text],
         ];
     }
 }
