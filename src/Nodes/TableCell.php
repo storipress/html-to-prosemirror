@@ -4,7 +4,12 @@ namespace HtmlToProseMirror\Nodes;
 
 class TableCell extends Node
 {
+    public $wrapper = [
+        'type' => 'paragraph',
+    ];
+
     protected $tagName = 'td';
+
     protected $nodeType = 'tableCell';
 
     public function matching()

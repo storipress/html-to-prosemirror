@@ -17,7 +17,7 @@ class Text extends Node
             return null;
         }
 
-        $passes = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+        $passes = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'td'];
 
         $node = $this->DOMNode->parentNode;
 
