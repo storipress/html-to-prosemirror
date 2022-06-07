@@ -23,6 +23,8 @@ class Renderer
     ];
 
     protected $nodes = [
+        Nodes\GettyImages::class,
+        Nodes\Instagram::class,
         Nodes\Blockquote::class,
         Nodes\Bookmark::class,
         Nodes\BulletList::class,
