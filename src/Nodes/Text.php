@@ -11,7 +11,7 @@ class Text extends Node
 
     public function data()
     {
-        $text = trim($this->DOMNode->nodeValue);
+        $text = trim($this->DOMNode->nodeValue, "\n");
 
         if ($text === '') {
             return null;
