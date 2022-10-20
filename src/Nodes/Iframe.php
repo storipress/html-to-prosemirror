@@ -16,7 +16,7 @@ class Iframe extends Node
 
         if ($this->DOMNode->nodeName === 'iframe') {
             $url = $this->DOMNode->getAttribute('src');
-        } else if ($this->DOMNode->nodeName === 'figure') {
+        } elseif ($this->DOMNode->nodeName === 'figure') {
             $url = trim($this->DOMNode->textContent);
 
             while ($this->DOMNode->hasChildNodes()) {
