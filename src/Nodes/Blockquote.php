@@ -11,9 +11,10 @@ class Blockquote extends Node
 
     public function data()
     {
-        $this->DOMNode->textContent = trim(
-            $this->DOMNode->textContent,
-            " “”<>\"\n\r\t\v\x00",
+        $this->DOMNode->textContent = preg_replace(
+            '/^[“”]+|[“”]+$/u',
+            '',
+            trim($this->DOMNode->textContent, " <>\"\n\r\t\v\x00"),
         );
 
         return [
